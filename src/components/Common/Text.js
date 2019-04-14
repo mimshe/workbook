@@ -22,7 +22,7 @@ export default class Text extends Component {
             fontSize = 12
         }
         return (
-            <BaseText style={[{fontFamily: 'IRANSansMobile(FaNum)', color, fontSize}, style]}>
+            <BaseText style={[{fontFamily: 'IRANSansMobile(FaNum)', writingDirection: 'rtl', color, fontSize}, style]}>
                 {this.props.children}
             </BaseText>
         );

@@ -9,7 +9,6 @@ const login = EStyleSheet.create({
     header: {
         alignItems: 'center',
         justifyContent: 'space-evenly',
-    //    position: 'absolute',
         width: screenWidth() - 40,
         maxWidth: 600,
         height: 300,
@@ -56,7 +55,8 @@ const login = EStyleSheet.create({
     mobileText: {
         alignSelf: "stretch",
         marginStart: 20,
-        marginTop: 5
+        marginTop: 5,
+
     },
     submit: {
         width: 80,
