@@ -1,11 +1,17 @@
-import {Dimensions} from 'react-native';
+import {Dimensions, Platform} from 'react-native';
 
-const screenWidth = () => {
+export const screenWidth = () => {
 
     return Dimensions.get('window').width;
 };
-const screenHeight = () => {
+export const screenHeight = () => {
     return Dimensions.get('window').height
 };
 
-export {screenHeight, screenWidth};
+export const isAndroid = () => {
+    return Platform.OS === 'android';
+};
+export const isIos = () => {
+    return Platform.OS === 'ios';
+};
+

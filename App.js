@@ -14,8 +14,14 @@ EStyleSheet.build({ // always call EStyleSheet.build() even if you don't use glo
     $secondaryTextColor: secondaryTextColor,
     $fontFamily: "IRANSansMobile(FaNum)"
 });
+import {I18nManager} from 'react-native';
 
 export default class App extends Component {
+    constructor() {
+        super();
+        I18nManager.forceRTL(true);
+    }
+
     render() {
         return (
             <Router>

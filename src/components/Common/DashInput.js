@@ -12,22 +12,10 @@ export default class DashInput extends Component {
             <View style={style.view}>
                 <Icon name='phone-portrait' style={style.icon}/>
                 {/* <TextInput style={style.input} placeholder='hi men'/>*/}
-                <TextInputMask
+                <TextInput
                     {...this.props}
-                    type={'custom'}
 
-                    options={{
-                        /**
-                         * mask: (String | required | default '')
-                         * the mask pattern
-                         * 9 - accept digit.
-                         * A - accept alpha.
-                         * S - accept alphanumeric.
-                         * * - accept all, EXCEPT white space.
-                         */
-                        mask: ('99999999999')
-                    }}
-                    placeholder='0 9 - - - - - - - - -'
+                    placeholder={isAndroid() ? '09---------' : '0 9 - - - - - - - - - '}
                     value={this.props.value}
                     onChangeText={text => this.props.onChangeText(text)}
                     style={style.input}
@@ -40,6 +28,7 @@ export default class DashInput extends Component {
 import EStyleSheet from 'react-native-extended-stylesheet';
 import {TextInputMask} from "react-native-masked-text";
 import {Icon} from "native-base";
+import {isAndroid} from "../../helper/index";
 
 const style = EStyleSheet.create({
     view: {
@@ -50,8 +39,12 @@ const style = EStyleSheet.create({
         alignSelf: "stretch",
         marginLeft: 10,
         marginRight: 10,
+
     },
     input: {
+
+        width: '100%',
+        alignSelf: "stretch",
         paddingLeft: 10,
         paddingRight: 10,
         paddingTop: 10,

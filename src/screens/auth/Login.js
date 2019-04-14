@@ -5,13 +5,14 @@ import Text from "../../components/Common/Text";
 import {TextInput, TouchableOpacity} from "react-native";
 import DashInput from "../../components/Common/DashInput";
 import {primaryColor, secondaryColor} from "../../helper/colors";
+import {screenWidth} from "../../helper/index";
 
 export default class Login extends Component {
 
     state = {
         mobile: '',
         mobileDescription: 'شماره تلفن خود را وارد کنید',
-        backgroundColor: secondaryColor
+        backgroundColor: secondaryColor,
     };
     _onChangeText = (mobile) => {
         this.setState({
@@ -37,24 +38,38 @@ export default class Login extends Component {
 
         return (
             <Content contentContainerStyle={login.container}>
-
-                <View style={login.header}>
-                    <View style={login.mobileSection}>
-                        <DashInput
-                            keyboardType="number-pad"
-                            maxLength={11}
-                            onChangeText={this._onChangeText}
-                            value={this.state.mobile}
-                        />
-                        <Text h5 style={login.mobileText}>{this.state.mobileDescription}</Text>
+                <View
+                    style={{
+                        flex: 1,
+                        alignItems: 'center',
+                        backgroundColor: 'transparent',
+                        // backgroundColor: '#D1C4E9',
+                    }}
+                >
+                    <View
+                        style={login.header}
+                    >
+                        <View style={login.mobileSection}>
+                            <DashInput
+                                autoFocus={true}
+                                keyboardType="number-pad"
+                                maxLength={11}
+                                onChangeText={this._onChangeText}
+                                value={this.state.mobile}
+                            />
+                            <Text h5 style={login.mobileText}>{this.state.mobileDescription}</Text>
+                        </View>
+                        <TouchableOpacity style={[login.submit, {backgroundColor: this.state.backgroundColor}]}>
+                            <Icon name='md-person-add' style={login.submitIcon}/>
+                        </TouchableOpacity>
                     </View>
-                    <TouchableOpacity style={[login.submit, {backgroundColor: this.state.backgroundColor}]}>
-                        <Icon name='md-person-add' style={login.submitIcon}/>
-                    </TouchableOpacity>
+                    <View
+                        style={login.subHeader}
+                    >
+                        <Text>قبلا ثبت نام کرده ام / <Text primary>ورود</Text></Text>
+                    </View>
                 </View>
-                <View style={login.subHeader}>
-                    <Text>قبلا ثبت نام کرده ام / <Text primary>ورود</Text></Text>
-                </View>
+
 
                 <View style={login.body}>
                     <Text primary h3>

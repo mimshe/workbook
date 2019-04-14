@@ -7,44 +7,46 @@ const login = EStyleSheet.create({
         height: screenHeight(),
     },
     header: {
+        alignItems: 'center',
+        justifyContent: 'space-evenly',
+    //    position: 'absolute',
         width: screenWidth() - 40,
         maxWidth: 600,
         height: 300,
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
-        backgroundColor: '$backgroundColor',
-        zIndex: 10,
-        shadowColor: "#000",
         borderBottomEndRadius: 30,
         borderBottomStartRadius: 30,
+        backgroundColor: 'white',
+        zIndex: 2,
+        shadowColor: '#000',
         shadowOffset: {
             width: 0,
             height: 3,
         },
         shadowOpacity: 0.37,
         shadowRadius: 7.49,
-        elevation: 12,
+        elevation: 7,
     },
     subHeader: {
-        zIndex: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        position: 'absolute',
+        top: 290,
         width: screenWidth() - 100,
         maxWidth: 540,
         height: 50,
-
-        justifyContent: 'center',
-        alignItems: 'center',
-        backgroundColor: '$backgroundColor',
-
-        shadowColor: "#000",
         borderBottomEndRadius: 30,
         borderBottomStartRadius: 30,
+        backgroundColor: 'white',
+        // backgroundColor: '#7E57C2',
+        zIndex: 1,
+        shadowColor: '#000',
         shadowOffset: {
             width: 0,
             height: 3,
         },
         shadowOpacity: 0.37,
         shadowRadius: 7.49,
-        elevation: 12,
+        elevation: 5,
     },
     body: {
         justifyContent: 'center',
@@ -53,8 +55,7 @@ const login = EStyleSheet.create({
     },
     mobileText: {
         alignSelf: "stretch",
-        textAlign: 'right',
-        marginRight: 20,
+        marginStart: 20,
         marginTop: 5
     },
     submit: {
@@ -81,7 +82,7 @@ const login = EStyleSheet.create({
     },
     mobileSection: {
         alignSelf: "stretch",
-        marginTop:40
+        marginTop: 40
     }
 });
 
