@@ -56,7 +56,6 @@ const login = EStyleSheet.create({
         alignSelf: "stretch",
         marginStart: 20,
         marginTop: 5,
-
     },
     submit: {
         width: 80,
