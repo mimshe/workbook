@@ -102,7 +102,7 @@ const profile = EStyleSheet.create({
         textAlign: 'left',
     },
     acceptView: {
-        bottom: -24,
+        bottom: -33,
         alignSelf: 'stretch',
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
@@ -124,6 +124,13 @@ const profile = EStyleSheet.create({
         alignSelf: 'center',
         fontSize: 35,
         color: 'white'
+    },
+    footerView :{
+        flexDirection: 'row',
+        marginTop: 30,
+        alignItems: 'center',
+        width: screenWidth(),
+        padding: 20
     }
 });
 export default profile;
