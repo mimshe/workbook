@@ -23,10 +23,9 @@ const style = EStyleSheet.create({
         marginTop : 10,
         marginRight : 10 ,
         marginLeft : 10 ,
-        borderWidth: 1,
+        borderWidth: .8,
         borderColor: primaryColor,
         alignItems: 'center',
-
     },
     input: {
         height: 40,

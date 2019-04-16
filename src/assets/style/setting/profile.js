@@ -25,7 +25,7 @@ const profile = EStyleSheet.create({
         shadowOpacity: 0.37,
         shadowRadius: 7.49,
         elevation: 7,
-
+        justifyContent: 'space-between'
     },
     subHeader: {
         alignItems: 'center',
@@ -74,7 +74,6 @@ const profile = EStyleSheet.create({
         alignItems: 'center',
         marginLeft: 10,
         marginRight: 10,
-        marginTop: 40
     },
     box: {
         alignSelf: "stretch"
@@ -82,34 +81,36 @@ const profile = EStyleSheet.create({
     addressBox: {
         borderWidth: .8,
         borderColor: '#d6d6d6',
-        marginTop: 40,
         marginLeft: 10,
         marginRight: 10,
         alignSelf: "stretch"
     },
     addressBoxTitle: {
         flexDirection: 'row',
-        padding: 10,
+        paddingLeft: 15,
+        paddingRight: 15,
+        paddingTop: 15,
         alignItems: 'center'
     },
     inputAddress: {
-        backgroundColor: '#ececec',
         margin: 5,
         flex: 1,
         height: 40,
         fontFamily: '$fontFamily',
         fontSize: 14,
         textAlign: 'left',
+        borderWidth: .8,
+        borderColor: primaryColor,
+        alignItems: 'center',
     },
     acceptView: {
-        bottom: -33,
         alignSelf: 'stretch',
         borderBottomLeftRadius: 30,
         borderBottomRightRadius: 30,
         height: 60,
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
     },
     acceptButton: {
         flex: .2,
@@ -125,12 +126,16 @@ const profile = EStyleSheet.create({
         fontSize: 35,
         color: 'white'
     },
-    footerView :{
+    footerView: {
         flexDirection: 'row',
-        marginTop: 30,
+        marginTop: 60,
         alignItems: 'center',
-        width: screenWidth(),
-        padding: 20
+        justifyContent: 'space-around',
+        width: screenWidth() - 50,
+    },
+    logo: {
+        width: 120,
+        height: 120,
     }
 });
 export default profile;
