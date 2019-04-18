@@ -1,13 +1,15 @@
 import React, {Component} from 'react';
-import {Content, Card, View, Icon, Header} from 'native-base'
+import {Content, View, Icon, Header} from 'native-base'
 import {ButtonGroup, Image} from "react-native-elements";
 import Text from "../../components/Common/Text";
-import {primaryColor} from "../../helper/colors";
+import {activeButtonColor, inActiveButtonColor, primaryColor} from "../../helper/colors";
 import index from '../../assets/style/followers/index'
+import FollowersItem from "../../components/FollowersItem";
 
-const component1 = () => <Text color = 'black' h5>آخرین لایک ها و کامنت ها</Text>;
-const component2 = () => <Text color = 'black' h5>آخرین تغییرات در دنبال کننده ها</Text>;
-const component3 = () => <Text color = 'black' h5>لایک شده های من</Text>;
+import {FlatList} from 'react-native'
+const component1 = () => <Text color = 'black' h5>رویدادهای‌اخیر</Text>;
+const component2 = () => <Text color = 'black' h5>دنبال‌کنندگان‌اخیر</Text>;
+const component3 = () => <Text color = 'black' h5>لایک‌شده‌ها</Text>;
 
 export default class Followers extends Component {
     constructor() {
@@ -17,7 +19,6 @@ export default class Followers extends Component {
         };
         this.updateIndex = this.updateIndex.bind(this)
     }
-
     updateIndex(selectedIndex) {
         this.setState({selectedIndex})
     }
@@ -27,98 +28,132 @@ export default class Followers extends Component {
         const {selectedIndex} = this.state;
 
         return (
-            <Content contentContainerStyle={{backgroundColor: 'white' , flex :1}}>
+            <Content contentContainerStyle={index.container}>
                 <Header style={index.header}>
-                    <View style={{
-                        flexDirection: 'row',
-                        alignItems: 'center',
-                        justifyContent: 'flex-start',
-                        width: '100%',
-                        padding: 10
-                    }}>
+                    <View style = {index.headerInside}>
                         <Icon name='ios-arrow-forward' style={{color : '#dddddd'}}/>
-                        <Text style={{fontSize: 12, paddingRight: 10}} color={primaryColor}>آخرین وضعیت دنبال
+                        <Text style={index.headerTitle} color={primaryColor}>آخرین وضعیت دنبال
                             کنندگان</Text>
                     </View>
                 </Header>
                 <ButtonGroup
-                    selectedButtonStyle = {{backgroundColor : '#aac4d1'}}
-                    buttonStyle={{backgroundColor : '#c7ebfb'}}
+                    selectedButtonStyle = {{backgroundColor : activeButtonColor}}
+                    buttonStyle={{backgroundColor : inActiveButtonColor}}
                     onPress={this.updateIndex}
                     selectedIndex={selectedIndex}
                     buttons={buttons}
-                    containerStyle={{height: 30, borderRadius: 30 , marginTop : 25}}/>
+                    containerStyle={index.buttonGroup}/>
                 {selectedIndex === 0
-                && <View style={{flex :1,flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'space-around' , padding : 5}}>
-                    <Card style={{
-                        width: 120,
-                        height: 200,
-                        backgroundColor: '#f5f5f5',
-                        alignItems: 'center',
-                        justifyContent: 'space-between'
-                    }}>
+                && <Content contentContainerStyle={index.firstIndex}>
+                    <View style={index.card}>
                         <Image
-                            style={{width: 50, height: 50, borderRadius: 25, backgroundColor: 'black', marginTop: 20}}
-                            source={require('../../assets/images/logo.png')}/>
-                        <Text>نام پروفایل</Text>
-                        <View style={{
-                            width: 120,
-                            height: 30,
-                            backgroundColor: '#fe4c4c',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }}>
-                            <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
-                        </View>
-                    </Card>
-                    <Card style={{
-
-                        width: 120,
-                        height: 200,
-                        backgroundColor: '#f5f5f5',
-                        alignItems: 'center',
-                        justifyContent: 'space-between'
-                    }}>
-                        <Image
-                            style={{width: 50, height: 50, borderRadius: 25, backgroundColor: 'black', marginTop: 20}}
-                            source={require('../../assets/images/logo.png')}/>
-                        <Text>نام پروفایل</Text>
-                        <View style={{
-                            width: 120,
-                            height: 30,
-                            backgroundColor: '#fe4c4c',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }}>
-                            <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
-                        </View>
-                    </Card>
-                    <Card style={{
-                        width: 120,
-                        maxHeight: 220,
-                        minHeight: 180,
-                        backgroundColor: '#f5f5f5',
-                        alignItems: 'center',
-                        justifyContent: 'space-between'
-                    }}>
-                        <Image
-                            style={{width: 50, height: 50, borderRadius: 25, backgroundColor: 'black', marginTop: 20}}
+                            style={index.thumbnail}
                             source={require('../../assets/images/logo.png')}/>
                         <Text>نام پروفایل</Text>
                         <Text color={primaryColor} h5 style={{padding: 10}}>من محصولا فروش این را پسندیدم</Text>
-                        <View style={{
-                            width: 120,
-                            height: 30,
-                            backgroundColor: '#515151',
-                            alignItems: 'center',
-                            justifyContent: 'center'
-                        }}>
+                        <View style={index.cardFooterComment}>
                             <Icon name='md-chatbubbles' style={{color: 'white', fontSize: 20}}/>
                         </View>
-                    </Card>
-                </View>}
+                    </View>
+                    <View style={index.card}>
+                        <Image
+                            style={index.thumbnail}
+                            source={require('../../assets/images/logo.png')}/>
+                        <Text>نام پروفایل</Text>
+                        <View style={index.cardFooterLike}>
+                            <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
+                        </View>
+                    </View>
+                    <View style={index.card}>
+                        <Image
+                            style={index.thumbnail}
+                            source={require('../../assets/images/logo.png')}/>
+                        <Text>نام پروفایل</Text>
+                        <View style={index.cardFooterLike}>
+                            <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
+                        </View>
+                    </View>
+                    <View style={index.card}>
+                        <Image
+                            style={index.thumbnail}
+                            source={require('../../assets/images/logo.png')}/>
+                        <Text>نام پروفایل</Text>
+                        <View style={index.cardFooterLike}>
+                            <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
+                        </View>
+                    </View>
+                    <View style={index.card}>
+                        <Image
+                            style={index.thumbnail}
+                            source={require('../../assets/images/logo.png')}/>
+                        <Text>نام پروفایل</Text>
+                        <View style={index.cardFooterLike}>
+                            <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
+                        </View>
+                    </View>
+                    <View style={index.card}>
+                        <Image
+                            style={index.thumbnail}
+                            source={require('../../assets/images/logo.png')}/>
+                        <Text>نام پروفایل</Text>
+                        <View style={index.cardFooterLike}>
+                            <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
+                        </View>
+                    </View>
+                    <View style={index.card}>
+                        <Image
+                            style={index.thumbnail}
+                            source={require('../../assets/images/logo.png')}/>
+                        <Text>نام پروفایل</Text>
+                        <View style={index.cardFooterLike}>
+                            <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
+                        </View>
+                    </View>
+                    <View style={index.card}>
+                        <Image
+                            style={index.thumbnail}
+                            source={require('../../assets/images/logo.png')}/>
+                        <Text>نام پروفایل</Text>
+                        <View style={index.cardFooterLike}>
+                            <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
+                        </View>
+                    </View>
+                    <View style={index.card}>
+                        <Image
+                            style={index.thumbnail}
+                            source={require('../../assets/images/logo.png')}/>
+                        <Text>نام پروفایل</Text>
+                        <View style={index.cardFooterLike}>
+                            <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
+                        </View>
+                    </View>
+                </Content>}
                 {selectedIndex === 1
-                && <Text> Tab two</Text>}
+                &&
+                <FlatList
+                    renderItem={({item}) => <FollowersItem item={item}/>}
+                    data={[
+                        {
+                            name: 'لورم ایپسوم',
+                            avatar:'',
+                        },
+                        {
+                            name: 'لورم ایپسوم',
+                            avatar:'',
+                        },
+                        {
+                            name: 'لورم ایپسوم',
+                            avatar:'',
+                        },
+                        {
+                            name: 'لورم ایپسوم',
+                            avatar:'',
+                        },
+
+                    ]}
+                    keyExtractor={(item) => item.name}
+                />
+                }
 
             </Content>
         )

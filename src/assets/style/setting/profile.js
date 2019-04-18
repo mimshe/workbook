@@ -118,7 +118,7 @@ const profile = EStyleSheet.create({
         width: 60,
         justifyContent: 'center',
         position: 'absolute',
-        left: 0
+        left: 0,
     },
     acceptButtonIcon: {
         alignSelf: 'center',

@@ -12,21 +12,28 @@ import Tooltip from "../../../components/Tooltip";
 export default class Profile extends Component {
 
     state = {
-        jobDescription: null,
+        jobDescription: '',
         addressDescription: 'مقادیر زیر را جهت آدرس محل کسب و کار خود پر کنید',
-        fullAddress : null,
+        fullAddress : '',
         completeProfile: 'ساخت پروفایل اولیه و شاخص شما',
         completeTextColor: '#4a4a4a',
         viewBackgroundColor: '#e2e2e2',
         buttonBackgroundColor: '#d0d0d0',
         image: null,
     };
-    _onChangeText = (jobDescription , fullAddress) => {
-        this.setState({jobDescription ,fullAddress}, () => {
-            if (jobDescription !== null && fullAddress !== null) {
+
+    _onChangeText = (jobDescription , fullAddress ) => {
+        this.setState({jobDescription , fullAddress}, () => {
+            if (this.state.jobDescription.length === 0 ) {
                 this.setState({
-                    completeProfile:
-                        'پروفایل شما با موفقیت تکمیل گردید. برای ورود به برنامه کلیک کنید',
+                    completeProfile: 'ساخت پروفایل اولیه و شاخص شما',
+                    viewBackgroundColor: '#e2e2e2',
+                    buttonBackgroundColor: '#d0d0d0',
+                    completeTextColor: '#4a4a4a',
+                })
+            }else {
+                this.setState({
+                    completeProfile: 'پروفایل‌شما‌با‌موفقیت‌تکمیل‌گردید.برای‌ورود‌به‌برنامه‌کلیک‌کنید',
                     viewBackgroundColor: '#3fc409',
                     buttonBackgroundColor: '#178c0f',
                     completeTextColor: 'white'
@@ -101,7 +108,7 @@ export default class Profile extends Component {
                             style={[profile.acceptButton, {backgroundColor: this.state.buttonBackgroundColor}]}>
                             <Icon name='ios-arrow-forward' style={profile.acceptButtonIcon}/>
                         </TouchableOpacity>
-                        <Text color={this.state.completeTextColor}>ساخت پروفایل اولیه و شاخص شما</Text>
+                        <Text style ={{fontSize : 12 ,paddingRight :50}} color={this.state.completeTextColor}>{this.state.completeProfile}</Text>
                     </View>
                 </View>
                 <View style={profile.subHeader}>
