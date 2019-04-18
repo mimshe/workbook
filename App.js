@@ -14,7 +14,9 @@ EStyleSheet.build({ // always call EStyleSheet.build() even if you don't use glo
     $fontFamily: "IRANSansMobile(FaNum)"
 });
 import {I18nManager} from 'react-native';
-import Profile from "./src/screens/setting/Profile";
+import Profile from "./src/screens/setting/profile/Profile";
+import Maps from "./src/screens/setting/profile/Maps";
+import Followers from "./src/screens/followers/Followers";
 
 export default class App extends Component {
     constructor() {
@@ -31,10 +33,13 @@ export default class App extends Component {
                         <Scene key="login" component={Login}/>
                     </Scene>
                     <Scene key="setting" hideNavBar initial>
-                        <Scene key="profile" component={Profile} initial/>
+                        <Scene key="profile" component={Profile} />
+                        <Scene key="map" component={Maps} initial/>
+                    </Scene >
+                    <Scene key = "followers_status"  hideNavBar>
+                        <Scene key = "last_followers_status" component = {Followers} />
                     </Scene>
                 </Scene>
-
             </Router>
         );
     }

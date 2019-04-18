@@ -9,7 +9,6 @@ const profile = EStyleSheet.create({
         backgroundColor: 'white'
     },
     header: {
-        alignItems: 'center',
         width: screenWidth() - 40,
         maxWidth: 600,
         height: 480,
@@ -136,6 +135,24 @@ const profile = EStyleSheet.create({
     logo: {
         width: 120,
         height: 120,
+    },
+    mapPageBackButtonView: {
+        alignSelf: 'stretch',
+        borderBottomLeftRadius: 30,
+        borderBottomRightRadius: 30,
+        height: 60,
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
+    mapPageBackButton: {
+        flex: .2,
+        borderBottomRightRadius: 30,
+        height: 60,
+        width: 60,
+        justifyContent: 'center',
+        position: 'absolute',
+        right: 0
     }
 });
 export default profile;

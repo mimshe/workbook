@@ -2,17 +2,17 @@ import React, {Component} from 'react';
 import {Content, Icon} from 'native-base';
 import {Image, TextInput, TouchableOpacity} from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
-import profile from "../../assets/style/setting/profile";
-import View from "../../components/Common/View";
-import Text from "../../components/Common/Text";
-import {primaryColor} from "../../helper/colors";
-import InputIcon from "../../components/Common/InputIcon";
-import Tooltip from "../../components/Tooltip";
+import profile from "../../../assets/style/setting/profile";
+import View from "../../../components/Common/View";
+import Text from "../../../components/Common/Text";
+import {primaryColor} from "../../../helper/colors";
+import InputIcon from "../../../components/Common/InputIcon";
+import Tooltip from "../../../components/Tooltip";
 
 export default class Profile extends Component {
 
     state = {
-        jobDescription: '',
+        jobDescription: null,
         addressDescription: 'مقادیر زیر را جهت آدرس محل کسب و کار خود پر کنید',
         fullAddress : null,
         completeProfile: 'ساخت پروفایل اولیه و شاخص شما',
@@ -23,11 +23,10 @@ export default class Profile extends Component {
     };
     _onChangeText = (jobDescription , fullAddress) => {
         this.setState({jobDescription ,fullAddress}, () => {
-            if (jobDescription !== null && fullAddress) {
+            if (jobDescription !== null && fullAddress !== null) {
                 this.setState({
                     completeProfile:
                         'پروفایل شما با موفقیت تکمیل گردید. برای ورود به برنامه کلیک کنید',
-
                     viewBackgroundColor: '#3fc409',
                     buttonBackgroundColor: '#178c0f',
                     completeTextColor: 'white'
@@ -40,7 +39,7 @@ export default class Profile extends Component {
     _checkProfile = () => {
         if (this.state.image === null) {
             return (
-                <Image style={{width: 80, height: 80, margin: 10}} source={require('../../assets/images/logo.png')}/>)
+                <Image style={{width: 80, height: 80, margin: 10}} source={require('../../../assets/images/logo.png')}/>)
         } else {
             return (<Image style={{width: 80, height: 80, margin: 10}} source={this.state.image}/>)
         }
@@ -82,7 +81,7 @@ export default class Profile extends Component {
                         </View>
                         <Text h5 style={profile.text}>برای انتخاب یک پروفایل اختصاصی روی باکس بالا کلیک کنید</Text>
                     </View>
-                    <View style = {{flex : .1 , top : 30 , right : 78 , zIndex:1}}>
+                    <View style = {{ alignItems:'flex-start', zIndex:1 , marginBottom : -40 , marginLeft:6}}>
                         <Tooltip/>
                     </View>
                     <View style={profile.addressBox}>
@@ -110,7 +109,7 @@ export default class Profile extends Component {
                         کنید</Text>
                 </View>
                 <View style={profile.footerView}>
-                    <Image source={require('../../assets/images/logo.png')}
+                    <Image source={require('../../../assets/images/logo.png')}
                            style={profile.logo}/>
                     <Text style={{width: 120}} h5>لورم ایپسوم متن ساختگی با تولید
                         سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
