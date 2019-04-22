@@ -3,12 +3,12 @@ import {screenHeight} from "../../../helper";
 
 const index = EStyleSheet.create({
     container: {
-        height : screenHeight(),
-        backgroundColor : 'white',
-        flex  :1
+        height: screenHeight(),
+        backgroundColor: 'white',
+        flex: 1
     },
-    header : {
-        backgroundColor : 'white',
+    header: {
+        backgroundColor: 'white',
         shadowColor: '#e2e2e2',
         shadowOffset: {
             width: 0,
@@ -18,53 +18,54 @@ const index = EStyleSheet.create({
         shadowRadius: 7.49,
         elevation: 15,
     },
-    headerInside :{
+    headerInside: {
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-start',
         width: '100%',
-        padding: 10
+        padding: 7
+
     },
-    headerTitle : {
+    headerTitle: {
         fontSize: 12,
         paddingRight: 10
     },
-    buttonGroup :{
+    buttonGroup: {
         height: 30,
-        borderRadius: 30 ,
-        marginTop : 25,
-        marginLeft : 30,
-        marginRight : 30,
+        borderRadius: 30,
+        marginTop: 25,
+        marginLeft: 30,
+        marginRight: 30,
     },
-    firstIndex : {
+    firstIndex: {
         flexWrap: 'wrap',
         flexDirection: 'row',
-        justifyContent: 'space-around' ,
-        padding : 5
+        justifyContent: 'space-around',
+        padding: 5
     },
-    card : {
+    card: {
         width: 120,
-        minHeight : 220,
+        minHeight: 220,
         backgroundColor: '#f5f5f5',
         alignItems: 'center',
         justifyContent: 'space-between',
-        marginBottom : 20
+        marginBottom: 20
     },
-    thumbnail : {
+    thumbnail: {
         width: 50,
         height: 50,
         borderRadius: 25,
         backgroundColor: 'black',
         marginTop: 20
     },
-    cardFooterLike : {
+    cardFooterLike: {
         width: 120,
         height: 30,
         backgroundColor: '#fe4c4c',
         alignItems: 'center',
         justifyContent: 'center'
     },
-    cardFooterComment : {
+    cardFooterComment: {
         width: 120,
         height: 30,
         backgroundColor: '#434343',
