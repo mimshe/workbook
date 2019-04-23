@@ -21,7 +21,7 @@ const index = EStyleSheet.create({
     headerInside: {
         flexDirection: 'row',
         alignItems: 'center',
-        justifyContent: 'flex-start',
+        justifyContent: 'space-between',
         width: '100%',
         padding: 7
 
