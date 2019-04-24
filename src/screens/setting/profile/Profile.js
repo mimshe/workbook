@@ -14,7 +14,7 @@ export default class Profile extends Component {
     state = {
         jobDescription: '',
         addressDescription: 'مقادیر زیر را جهت آدرس محل کسب و کار خود پر کنید',
-        fullAddress : '',
+        fullAddress: '',
         completeProfile: 'ساخت پروفایل اولیه و شاخص شما',
         completeTextColor: '#4a4a4a',
         viewBackgroundColor: '#e2e2e2',
@@ -22,16 +22,16 @@ export default class Profile extends Component {
         image: null,
     };
 
-    _onChangeText = (jobDescription , fullAddress ) => {
-        this.setState({jobDescription , fullAddress}, () => {
-            if (this.state.jobDescription.length === 0 ) {
+    _onChangeText = (jobDescription, fullAddress) => {
+        this.setState({jobDescription, fullAddress}, () => {
+            if (this.state.jobDescription.length === 0) {
                 this.setState({
                     completeProfile: 'ساخت پروفایل اولیه و شاخص شما',
                     viewBackgroundColor: '#e2e2e2',
                     buttonBackgroundColor: '#d0d0d0',
                     completeTextColor: '#4a4a4a',
                 })
-            }else {
+            } else {
                 this.setState({
                     completeProfile: 'پروفایل‌شما‌با‌موفقیت‌تکمیل‌گردید.برای‌ورود‌به‌برنامه‌کلیک‌کنید',
                     viewBackgroundColor: '#3fc409',
@@ -46,7 +46,8 @@ export default class Profile extends Component {
     _checkProfile = () => {
         if (this.state.image === null) {
             return (
-                <Image style={{width: 80, height: 80, margin: 10}} source={require('../../../assets/images/logo.png')}/>)
+                <Image style={{width: 80, height: 80, margin: 10}}
+                       source={require('../../../assets/images/logo.png')}/>)
         } else {
             return (<Image style={{width: 80, height: 80, margin: 10}} source={this.state.image}/>)
         }
@@ -88,7 +89,7 @@ export default class Profile extends Component {
                         </View>
                         <Text h5 style={profile.text}>برای انتخاب یک پروفایل اختصاصی روی باکس بالا کلیک کنید</Text>
                     </View>
-                    <View style = {{ alignItems:'flex-start', zIndex:1 , marginBottom : -40 , marginLeft:6}}>
+                    <View style={{alignItems: 'flex-start', zIndex: 1, marginBottom: -40, marginLeft: 6}}>
                         <Tooltip/>
                     </View>
                     <View style={profile.addressBox}>
@@ -108,7 +109,8 @@ export default class Profile extends Component {
                             style={[profile.acceptButton, {backgroundColor: this.state.buttonBackgroundColor}]}>
                             <Icon name='ios-arrow-forward' style={profile.acceptButtonIcon}/>
                         </TouchableOpacity>
-                        <Text style ={{fontSize : 12 ,paddingRight :50}} color={this.state.completeTextColor}>{this.state.completeProfile}</Text>
+                        <Text style={{fontSize: 12, paddingRight: 50}}
+                              color={this.state.completeTextColor}>{this.state.completeProfile}</Text>
                     </View>
                 </View>
                 <View style={profile.subHeader}>

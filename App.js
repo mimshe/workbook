@@ -18,6 +18,8 @@ import Profile from "./src/screens/setting/profile/Profile";
 import Maps from "./src/screens/setting/profile/Maps";
 import Followers from "./src/screens/followers/Followers";
 import Search from "./src/screens/search/Search";
+import Main from "./src/screens/main/Main";
+import Home from "./src/screens/main/Home";
 
 export default class App extends Component {
     constructor() {
@@ -40,8 +42,12 @@ export default class App extends Component {
                     <Scene key = "followers_status"  hideNavBar >
                         <Scene key = "last_followers_status" component = {Followers} />
                     </Scene>
-                    <Scene key = "search_filter"  hideNavBar initial>
-                        <Scene key = "search" component = {Search} initial/>
+                    <Scene key = "search_filter"  hideNavBar >
+                        <Scene key = "search" component = {Search} />
+                    </Scene>
+                    <Scene key = "main"  hideNavBar initial>
+                        <Scene key = "main_page" component = {Main} />
+                        <Scene key = "home" component = {Home} initial/>
                     </Scene>
                 </Scene>
             </Router>

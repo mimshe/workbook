@@ -5,7 +5,7 @@ import {primaryColor, secondaryColor} from "../../helper/colors";
 
 export default class Text extends Component {
     render() {
-        let {style = {}, primary = false, color = secondaryColor, fontSize = 14, h3 = false, h4 = false, h5 = false} = this.props;
+        let {style = {}, primary = false, color = secondaryColor, fontSize = 14, h3 = false, h4 = false, h5 = false , h6 =false} = this.props;
         if (primary) {
             color = primaryColor
         }
@@ -18,7 +18,7 @@ export default class Text extends Component {
         if (h5) {
             fontSize = 14
         }
-        if (h5) {
+        if (h6) {
             fontSize = 12
         }
         return (
