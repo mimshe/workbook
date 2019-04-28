@@ -79,7 +79,7 @@ export default class Profile extends Component {
                 <View style={profile.header}>
                     <View style={profile.box}>
                         <InputIcon onChangeText={this._onChangeText}/>
-                        <Text h5 style={profile.text}>یک عنوان برای صنف شغلی خود انتخاب کنید</Text>
+                        <Text h6 style={profile.text}>یک عنوان برای صنف شغلی خود انتخاب کنید</Text>
                     </View>
                     <View style={profile.box}>
                         <View style={profile.chooseProfile}>
@@ -87,7 +87,7 @@ export default class Profile extends Component {
                                 {this._checkProfile(this.state)}
                             </TouchableOpacity>
                         </View>
-                        <Text h5 style={profile.text}>برای انتخاب یک پروفایل اختصاصی روی باکس بالا کلیک کنید</Text>
+                        <Text h6 style={profile.text}>برای انتخاب یک پروفایل اختصاصی روی باکس بالا کلیک کنید</Text>
                     </View>
                     <View style={{alignItems: 'flex-start', zIndex: 1, marginBottom: -40, marginLeft: 6}}>
                         <Tooltip/>
@@ -96,9 +96,9 @@ export default class Profile extends Component {
                         <View style={profile.addressBoxTitle}>
                             <Icon name='md-pin'/>
                             <View style={profile.separator}/>
-                            <Text h5 style={profile.text}>{this.state.addressDescription}</Text>
+                            <Text h6 style={profile.text}>{this.state.addressDescription}</Text>
                         </View>
-                        <View style={{flexDirection: 'row', padding: 5}}>
+                        <View style={profile.inputAddressView}>
                             <TextInput
                                 placeholder='استان / شهر / ناحیه / آدرس محلی'
                                 style={profile.inputAddress}/>
@@ -114,13 +114,13 @@ export default class Profile extends Component {
                     </View>
                 </View>
                 <View style={profile.subHeader}>
-                    <Text h5 color={primaryColor} style={{marginTop: 8}}>جهت نمایش سایت و آخرین اخبار برنامه کلیک
+                    <Text h6 color={primaryColor} style={{marginTop: 8}}>جهت نمایش سایت و آخرین اخبار برنامه کلیک
                         کنید</Text>
                 </View>
                 <View style={profile.footerView}>
                     <Image source={require('../../../assets/images/logo.png')}
                            style={profile.logo}/>
-                    <Text style={{width: 120}} h5>لورم ایپسوم متن ساختگی با تولید
+                    <Text style={{width: 120}} h6>لورم ایپسوم متن ساختگی با تولید
                         سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک
                         است.</Text>
                 </View>

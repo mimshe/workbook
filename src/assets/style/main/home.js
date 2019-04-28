@@ -26,7 +26,7 @@ const home = EStyleSheet.create({
         marginTop: 25,
     },
     buttonGroupView: {
-        flex : 1,
+        flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'center'
@@ -36,13 +36,13 @@ const home = EStyleSheet.create({
         fontSize: 22
     },
     infoBox: {
-        flexDirection : 'row',
-        alignSelf : 'center',
-        justifyContent : 'space-between',
-       flex : 2 ,
-        backgroundColor : 'black',
-        height : 100,
-        marginTop : 25,
+        flexDirection: 'row',
+        alignSelf: 'center',
+        justifyContent: 'space-between',
+        flex: 2,
+
+        height: 100,
+        marginTop: 25,
     }
 });
 

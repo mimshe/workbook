@@ -21,11 +21,11 @@ export default class Maps extends Component {
                             style={[profile.mapPageBackButton, {backgroundColor: this.state.buttonBackgroundColor}]}>
                             <Icon name='ios-arrow-back' style={profile.acceptButtonIcon}/>
                         </TouchableOpacity>
-                        <Text color={this.state.completeTextColor}>ساخت پروفایل اولیه و شاخص شما</Text>
+                        <Text h6 color={this.state.completeTextColor}>ساخت پروفایل اولیه و شاخص شما</Text>
                     </View>
                 </View>
                 <View style={profile.subHeader}>
-                    <Text h5 color={primaryColor} style={{marginTop: 8}}>جهت نمایش سایت و آخرین اخبار برنامه کلیک
+                    <Text h6 color={primaryColor} style={{marginTop: 8}}>جهت نمایش سایت و آخرین اخبار برنامه کلیک
                         کنید</Text>
                 </View>
             </Content>

@@ -7,7 +7,7 @@ export default class App extends Component {
         return (
             <View style={styles.talkBubble}>
                 <View style={styles.talkBubbleSquare} >
-                    <Text h5 color = 'white' >جهت انتخاب از روی نقشه کلیک کنید</Text>
+                    <Text h6 color = 'white' >جهت انتخاب از روی نقشه کلیک کنید</Text>
                 </View>
                 <View style={styles.talkBubbleTriangle}/>
             </View>

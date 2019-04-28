@@ -6,6 +6,7 @@ import BadgeWrite from "../../components/BadgeWrite";
 import {ButtonGroup} from "react-native-elements";
 import Text from "../../components/Common/Text";
 import {screenWidth} from "../../helper";
+import Resome from "../../components/Resome";
 
 const tab1 = () => {
     return (
@@ -40,9 +41,11 @@ export default class Home extends Component {
         };
         this.updateIndex = this.updateIndex.bind(this)
     }
+
     updateIndex(selectedIndex) {
         this.setState({selectedIndex})
     }
+
     render() {
         const buttons = [{element: tab1}, {element: tab2}, {element: tab3}];
         const {selectedIndex} = this.state;
@@ -76,12 +79,28 @@ export default class Home extends Component {
                 </Header>
                 <Content padder>
                     <View style={home.infoBox}>
-                        <View style={{justifyContent: 'center'}}>
-                            <View style={{flexDirection: 'row' , marginBottom : 5}}>
+                        <View>
+                            <View style={{
+                                flexDirection: 'row',
+                                marginBottom: 5,
+                                justifyContent: 'space-between',
+                                alignItems: 'center'
+                            }}>
                                 <Text h6>متخصص سیستم های امنیتی فروشگاه</Text>
-                                <TouchableOpacity>
-                                    <Text style={{fontSize: 9}}>ویرایش پروفایل</Text>
-                                </TouchableOpacity>
+                                <View style={{flexDirection: 'row', justifyContent: 'center' , alignItems : 'center'}}>
+                                    <View style={{
+                                        width: 15,
+                                        height: 15,
+                                        borderRadius: 7.5,
+                                        backgroundColor: 'green',
+                                        marginRight: 5
+                                    }}/>
+                                    <TouchableOpacity
+                                        style={{borderLeftWidth: .8, borderLeftColor: '#f0f0f0', paddingLeft: 5}}>
+                                        <Text style={{fontSize: 9}}>ویرایش پروفایل</Text>
+                                    </TouchableOpacity>
+
+                                </View>
                             </View>
 
                             <View style={{
@@ -91,28 +110,38 @@ export default class Home extends Component {
                                 width: screenWidth() / 1.5
                             }}/>
 
-                            <View style={{flexDirection: 'row' , marginTop : 5 }}>
-                                <View style = {{alignItems:'center', flex :.33 , borderRightWidth : .8 , borderRightColor : '#f5f5f5'}}>
+                            <View style={{flexDirection: 'row', marginTop: 5}}>
+                                <View style={{
+                                    alignItems: 'center',
+                                    flex: .33,
+                                    borderRightWidth: .8,
+                                    borderRightColor: '#f5f5f5'
+                                }}>
                                     <Text primary h4>475</Text>
-                                    <Text style = {{fontSize : 9}}>صاحبان‌کسب‌و‌کار</Text>
+                                    <Text style={{fontSize: 9}}>صاحبان‌کسب‌و‌کار</Text>
                                 </View>
 
-                                <View style = {{alignItems:'center' , flex : .33, borderRightWidth : .8 , borderRightColor : '#f5f5f5'}}>
+                                <View style={{
+                                    alignItems: 'center',
+                                    flex: .33,
+                                    borderRightWidth: .8,
+                                    borderRightColor: '#f5f5f5'
+                                }}>
                                     <Text primary h4>475</Text>
-                                    <Text style = {{fontSize : 9}}>مشتریان</Text>
+                                    <Text style={{fontSize: 9}}>مشتریان</Text>
                                 </View>
 
-                                <View style = {{alignItems:'center' , flex : .33 , marginLeft :5}}>
+                                <View style={{alignItems: 'center', flex: .33, marginLeft: 5}}>
                                     <Text primary h4>475</Text>
-                                    <Text style = {{fontSize : 9}}>پست‌های‌ارسال‌شده</Text>
+                                    <Text style={{fontSize: 9}}>پست‌های‌ارسال‌شده</Text>
                                 </View>
                             </View>
                         </View>
-                        <View style={{alignItems: 'flex-start' , flex : .5}}>
+                        <View style={{alignItems: 'flex-start', flex: .5}}>
                             <Image style={{
-                                flex: .2,
-                                width: null,
-                                height: null,
+                                flex: .5,
+                                width: 50,
+                                height: 50,
                                 borderRadius: 30,
                                 borderWidth: 2,
                                 borderColor: 'black'
@@ -126,6 +155,11 @@ export default class Home extends Component {
                         selectedIndex={selectedIndex}
                         buttons={buttons}
                         containerStyle={home.buttonGroup}/>
+                    {selectedIndex === 0 &&
+                    <Content>
+                        <Resome />
+                    </Content>
+                    }
                 </Content>
             </Container>
         )

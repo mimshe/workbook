@@ -91,6 +91,10 @@ const profile = EStyleSheet.create({
         paddingTop: 15,
         alignItems: 'center'
     },
+    inputAddressView : {
+        flexDirection: 'row',
+        padding: 5
+    },
     inputAddress: {
         margin: 5,
         flex: 1,
@@ -101,6 +105,7 @@ const profile = EStyleSheet.create({
         borderWidth: .8,
         borderColor: primaryColor,
         alignItems: 'center',
+        paddingLeft : 10
     },
     acceptView: {
         alignSelf: 'stretch',

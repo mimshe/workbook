@@ -31,8 +31,8 @@ export default class App extends Component {
         return (
             <Router>
                 <Scene key="root" hideNavBar>
-                    <Scene key="intro" component={Intro}/>
-                    <Scene key="auth" hideNavBar initial>
+                    <Scene key="intro" component={Intro} />
+                    <Scene key="auth" hideNavBar >
                         <Scene key="login" component={Login} />
                     </Scene>
                     <Scene key="setting" hideNavBar >
@@ -46,8 +46,8 @@ export default class App extends Component {
                         <Scene key = "search" component = {Search} />
                     </Scene>
                     <Scene key = "main"  hideNavBar initial>
-                        <Scene key = "main_page" component = {Main} />
-                        <Scene key = "home" component = {Home} initial/>
+                        <Scene key = "main_page" component = {Main} initial/>
+                        <Scene key = "home" component = {Home} />
                     </Scene>
                 </Scene>
             </Router>

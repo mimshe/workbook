@@ -30,7 +30,7 @@ export default class Search extends Component {
         return (
             <Container>
                 <Header style={search.header}>
-                    <View style={index.headerInside}>
+                    <View style={search.headerInside}>
                         {/*<SearchBar
                             clearIcon={false}
                             searchIcon={{size: 25}}
@@ -43,7 +43,7 @@ export default class Search extends Component {
                             value={searching}
                         />*/}
                         <TouchableOpacity onPress={() => this.modal._toggleModal()}>
-                            <Icon name='md-search' style={{fontSize: 25, color: '#c5c5c5'}}/>
+                            <Icon name='md-search' style={search.filterIcon}/>
                         </TouchableOpacity>
                         <TextInput placeholder='شهر مورد نظر خود را برای جستجو وارد کنید'
                                    placeholderTextFontFamily="IRANSansMobile(FaNum)"
@@ -62,10 +62,10 @@ export default class Search extends Component {
                                source={require('../../assets/images/logo.png')}/>
                         <View>
                             <View style={search.userInfoBox}>
-                                <Text h5 color='black'> نام کاربری</Text>
-                                <Text h5 color='black' style={{marginLeft: 5}}>[156 مشتری]</Text>
+                                <Text h6 color='black'> نام کاربری</Text>
+                                <Text h6 color='black' style={{marginLeft: 5}}>[156 مشتری]</Text>
                             </View>
-                            <Button style={search.followButton}><Text h5>دنبال کنید</Text></Button>
+                            <Button style={search.followButton}><Text h6>دنبال کنید</Text></Button>
                         </View>
                     </View>
                     <View style={search.searchResultCard}>
@@ -73,10 +73,10 @@ export default class Search extends Component {
                                source={require('../../assets/images/logo.png')}/>
                         <View>
                             <View style={search.userInfoBox}>
-                                <Text h5 color='black'> نام کاربری</Text>
-                                <Text h5 color='black' style={{marginLeft: 5}}>[156 مشتری]</Text>
+                                <Text h6 color='black'> نام کاربری</Text>
+                                <Text h6 color='black' style={{marginLeft: 5}}>[156 مشتری]</Text>
                             </View>
-                            <Button style={search.followButton}><Text h5>دنبال کنید</Text></Button>
+                            <Button style={search.followButton}><Text h6>دنبال کنید</Text></Button>
                         </View>
                     </View>
                 </Content>

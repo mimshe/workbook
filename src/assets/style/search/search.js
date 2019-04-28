@@ -14,6 +14,18 @@ const search = EStyleSheet.create({
         shadowRadius: 7.49,
         elevation: 7,
     },
+    headerInside: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent : 'space-between',
+        width: '100%',
+        padding: 7
+
+    },
+    filterIcon : {
+        fontSize: 25,
+        color: '#c5c5c5'
+    },
     main: {
         height: screenHeight() - 60,
         alignItems: 'center',
