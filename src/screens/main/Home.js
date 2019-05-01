@@ -5,7 +5,6 @@ import home from "../../assets/style/main/home";
 import BadgeWrite from "../../components/BadgeWrite";
 import {ButtonGroup} from "react-native-elements";
 import Text from "../../components/Common/Text";
-import {screenWidth} from "../../helper";
 import Resome from "../../components/Resome";
 
 const tab1 = () => {
@@ -55,10 +54,10 @@ export default class Home extends Component {
                     <View style={home.headerInside}>
                         <View style={{flexDirection: 'row'}}>
                             <TouchableOpacity>
-                                <Icon name='md-keypad' style={{fontSize: 25, color: '#2d2d2d'}}/>
+                                <Icon name='md-keypad' style={home.keyIcon}/>
                             </TouchableOpacity>
-                            <Icon name='md-create' style={{fontSize: 25, color: '#2d2d2d', marginLeft: 20}}/>
-                            <View style={{marginTop: -8, marginLeft: -10, backgroundColor: 'transparent'}}>
+                            <Icon name='md-create' style={home.pencilIcon}/>
+                            <View style={home.headerBadge}>
                                 <BadgeWrite/>
                             </View>
                         </View>
@@ -79,74 +78,54 @@ export default class Home extends Component {
                 </Header>
                 <Content padder>
                     <View style={home.infoBox}>
-                        <View>
-                            <View style={{
-                                flexDirection: 'row',
-                                marginBottom: 5,
-                                justifyContent: 'space-between',
-                                alignItems: 'center'
-                            }}>
+                        <View style={home.userInfo}>
+                            <Image style={home.avatar} source={require('../../assets/images/logo.png')}/>
+                        </View>
+                        <View >
+                            <View style={home.usernameView}>
                                 <Text h6>متخصص سیستم های امنیتی فروشگاه</Text>
-                                <View style={{flexDirection: 'row', justifyContent: 'center' , alignItems : 'center'}}>
-                                    <View style={{
-                                        width: 15,
-                                        height: 15,
-                                        borderRadius: 7.5,
-                                        backgroundColor: 'green',
-                                        marginRight: 5
-                                    }}/>
+                                <View style={home.changeProfileView}>
+                                    <View style={home.ySeparator} />
                                     <TouchableOpacity
-                                        style={{borderLeftWidth: .8, borderLeftColor: '#f0f0f0', paddingLeft: 5}}>
-                                        <Text style={{fontSize: 9}}>ویرایش پروفایل</Text>
+                                        style={home.changeProfileButton}>
+                                        <Text h7>ویرایش پروفایل</Text>
                                     </TouchableOpacity>
 
                                 </View>
                             </View>
 
-                            <View style={{
-                                marginLeft: 10,
-                                backgroundColor: 'gray',
-                                height: .8,
-                                width: screenWidth() / 1.5
-                            }}/>
+                            <View style={home.xSeparator} />
 
                             <View style={{flexDirection: 'row', marginTop: 5}}>
-                                <View style={{
-                                    alignItems: 'center',
-                                    flex: .33,
-                                    borderRightWidth: .8,
-                                    borderRightColor: '#f5f5f5'
-                                }}>
-                                    <Text primary h4>475</Text>
-                                    <Text style={{fontSize: 9}}>صاحبان‌کسب‌و‌کار</Text>
+                                <View style={home.infoBoxBottomView} >
+                                    <Text primary h5>475</Text>
+                                    <Text h7>صاحبان‌کسب‌و‌کار</Text>
                                 </View>
-
-                                <View style={{
-                                    alignItems: 'center',
-                                    flex: .33,
-                                    borderRightWidth: .8,
-                                    borderRightColor: '#f5f5f5'
-                                }}>
-                                    <Text primary h4>475</Text>
-                                    <Text style={{fontSize: 9}}>مشتریان</Text>
+                                <View style={home.infoBoxBottomView} >
+                                    <Text primary h5>475</Text>
+                                    <Text h7>صاحبان‌کسب‌و‌کار</Text>
                                 </View>
-
-                                <View style={{alignItems: 'center', flex: .33, marginLeft: 5}}>
-                                    <Text primary h4>475</Text>
-                                    <Text style={{fontSize: 9}}>پست‌های‌ارسال‌شده</Text>
+                                <View style={home.infoBoxBottomView} >
+                                    <Text primary h5>475</Text>
+                                    <Text h7>صاحبان‌کسب‌و‌کار</Text>
                                 </View>
                             </View>
                         </View>
-                        <View style={{alignItems: 'flex-start', flex: .5}}>
-                            <Image style={{
-                                flex: .5,
-                                width: 50,
-                                height: 50,
-                                borderRadius: 30,
-                                borderWidth: 2,
-                                borderColor: 'black'
-                            }} source={require('../../assets/images/logo.png')}/>
+                    </View>
+                    <View style = {{height : 100 , marginRight : 10 , marginLeft : 10}}>
+                        <Text h7 color = '#2d2d2d'>بیوگرافی</Text>
+                        <View style = {{flexDirection : 'row' , alignItems : 'center' , alignSelf : 'center'}}>
+                            <View style = {{marginRight : 15 , alignItems : 'center'}}>
+                                <Text h7>آدرس سایت</Text>
+                                <Text h7>www.work.com</Text>
+                            </View>
+
+                            <View style = {{ alignItems : 'center'}}>
+                                <Text h7>آی دی تلگرام</Text>
+                                <Text h7>t.me/workbook</Text>
+                            </View>
                         </View>
+                        <Text h7>لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم لورم ایپسوم </Text>
                     </View>
                     <ButtonGroup
                         selectedButtonStyle={{backgroundColor: '#e6e6e6'}}

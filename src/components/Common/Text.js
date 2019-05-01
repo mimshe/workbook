@@ -5,7 +5,7 @@ import {primaryColor, secondaryColor} from "../../helper/colors";
 
 export default class Text extends Component {
     render() {
-        let {style = {}, primary = false, color = secondaryColor, fontSize = 14, h3 = false, h4 = false, h5 = false , h6 =false} = this.props;
+        let {style = {}, primary = false, color = secondaryColor, fontSize = 14, h3 = false, h4 = false, h5 = false , h6 =false , h7 = false} = this.props;
         if (primary) {
             color = primaryColor
         }
@@ -20,6 +20,9 @@ export default class Text extends Component {
         }
         if (h6) {
             fontSize = 12
+        }
+        if (h7) {
+            fontSize = 9
         }
         return (
             <BaseText style={[{fontFamily: 'IRANSansMobile(FaNum)', writingDirection: 'rtl', color, fontSize}, style]}>

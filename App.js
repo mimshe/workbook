@@ -43,12 +43,12 @@ export default class App extends Component {
                     <Scene key = "followers_status"  hideNavBar >
                         <Scene key = "last_followers_status" component = {Followers} />
                     </Scene>
-                    <Scene key = "search_filter"  hideNavBar initial>
-                        <Scene key = "search" component = {Search} initial/>
+                    <Scene key = "search_filter"  hideNavBar >
+                        <Scene key = "search" component = {Search} />
                     </Scene>
-                    <Scene key = "main"  hideNavBar >
+                    <Scene key = "main"  hideNavBar initial>
                         <Scene key = "main_page" component = {Main} />
-                        <Scene key = "home" component = {Home} />
+                        <Scene key = "home" component = {Home} initial/>
                     </Scene>
                 </Scene>
             </Router>

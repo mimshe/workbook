@@ -63,17 +63,17 @@ export default class Resome extends Component {
                     <View style={{flex: 1 }}>
                         <View style={{backgroundColor: '#ecff06', height: screenHeight() * .15 , justifyContent : 'flex-end' , alignItems : 'center' , marginBottom : 10}}>
                             <View style = {{backgroundColor : 'black' , height : 30 , width : 120 , alignItems:'center' , justifyContent : 'center',margin : 10}}>
-                                <Text h5>150400 تومان</Text>
+                                <Text h6>150400 تومان</Text>
                             </View>
                         </View>
                         <View style={{backgroundColor: '#ecff06', height: screenHeight() * .15 , justifyContent : 'flex-end' , alignItems : 'center' , marginBottom : 10}}>
                             <View style = {{backgroundColor : 'black' , height : 30 , width : 120 , alignItems:'center' , justifyContent : 'center',margin : 10}}>
-                                <Text h5>150400 تومان</Text>
+                                <Text h6>150400 تومان</Text>
                             </View>
                         </View>
                         <View style={{backgroundColor: '#ecff06', height: screenHeight() * .15 , justifyContent : 'flex-end' , alignItems : 'center' , marginBottom : 10}}>
                             <View style = {{backgroundColor : 'black' , height : 30 , width : 120 , alignItems:'center' , justifyContent : 'center',margin : 10}}>
-                                <Text h5>150400 تومان</Text>
+                                <Text h6>150400 تومان</Text>
                             </View>
                         </View>
                     </View>
@@ -91,7 +91,7 @@ export default class Resome extends Component {
                                 alignItems: 'center',
                                 justifyContent: 'center'
                             }}>
-                                <Text h5>150400 تومان</Text>
+                                <Text h6>150400 تومان</Text>
                             </View>
                         </View>
                         <View style={{
@@ -103,7 +103,7 @@ export default class Resome extends Component {
                                 alignItems: 'center',
                                 justifyContent: 'center'
                             }}>
-                                <Text h5>150400 تومان</Text>
+                                <Text h6>150400 تومان</Text>
                             </View>
                         </View>
                         <View style={{
@@ -115,7 +115,7 @@ export default class Resome extends Component {
                                 alignItems: 'center',
                                 justifyContent: 'center'
                             }}>
-                                <Text h5>150400 تومان</Text>
+                                <Text h6>150400 تومان</Text>
                             </View>
                         </View>
                     </View>
