@@ -7,9 +7,9 @@ import index from '../../assets/style/followers/index'
 import FollowersItem from "../../components/FollowersItem";
 
 import {FlatList} from 'react-native'
-const component1 = () => <Text color = 'black' h5>رویدادهای‌اخیر</Text>;
-const component2 = () => <Text color = 'black' h5>دنبال‌کنندگان‌اخیر</Text>;
-const component3 = () => <Text color = 'black' h5>لایک‌شده‌ها</Text>;
+const component1 = () => <Text color = 'black' h6>رویدادهای‌اخیر</Text>;
+const component2 = () => <Text color = 'black' h6>دنبال‌کنندگان‌اخیر</Text>;
+const component3 = () => <Text color = 'black' h6>لایک‌شده‌ها</Text>;
 
 export default class Followers extends Component {
     constructor() {
@@ -50,7 +50,7 @@ export default class Followers extends Component {
                             style={index.thumbnail}
                             source={require('../../assets/images/logo.png')}/>
                         <Text>نام پروفایل</Text>
-                        <Text color={primaryColor} h5 style={{padding: 10}}>من محصولا فروش این را پسندیدم</Text>
+                        <Text color={primaryColor} h6 style={{padding: 10}}>من محصولا فروش این را پسندیدم</Text>
                         <View style={index.cardFooterComment}>
                             <Icon name='md-chatbubbles' style={{color: 'white', fontSize: 20}}/>
                         </View>
@@ -68,7 +68,7 @@ export default class Followers extends Component {
                         <Image
                             style={index.thumbnail}
                             source={require('../../assets/images/logo.png')}/>
-                        <Text>نام پروفایل</Text>
+                        <Text h6>نام پروفایل</Text>
                         <View style={index.cardFooterLike}>
                             <Icon name='md-heart' style={{color: 'white', fontSize: 20}}/>
                         </View>

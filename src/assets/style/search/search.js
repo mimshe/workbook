@@ -32,7 +32,7 @@ const search = EStyleSheet.create({
         justifyContent: 'center'
     },
     modalView: {
-        height: screenHeight() / 1.2,
+        height: screenHeight() * .5,
         maxHeight: 460,
         width: screenWidth() / 1.2,
         maxWidth: 500,
@@ -66,12 +66,12 @@ const search = EStyleSheet.create({
         backgroundColor: 'transparent',
         fontFamily: '$fontFamily',
         textAlign: 'left',
-        fontSize: 14,
+        fontSize: 12,
         alignSelf: 'center'
     },
     searchResultCard: {
         height : 70,
-        width : screenWidth() /2 ,
+        width : screenWidth() * .4 ,
         backgroundColor: '#f1f1f1',
         marginTop : 15,
         flexDirection : 'row',

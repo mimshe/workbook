@@ -8,6 +8,7 @@ import Text from "../../../components/Common/Text";
 import {primaryColor} from "../../../helper/colors";
 import InputIcon from "../../../components/Common/InputIcon";
 import Tooltip from "../../../components/Tooltip";
+import { RNSelectionMenu } from 'react-native-selection-menu'
 
 export default class Profile extends Component {
 
@@ -21,6 +22,30 @@ export default class Profile extends Component {
         buttonBackgroundColor: '#d0d0d0',
         image: null,
     };
+    _onPress (props) {
+        RNSelectionMenu.Show({
+            values: [
+                "Open Camera",
+                "Select from gallery",
+                "Cancel",
+            ],
+            selectedValues: [ "Open Camera" ,"Select from gallery"],
+            selectionType: 1,
+            title : 'Choose ...',
+            presentationType: 0,
+            searchPlaceholder: "Search Value",
+            // searchTintColor: "#FFFFFF",
+            onSelection: selectedValues => {
+              if (selectedValues === "Open Camera" ){
+                  this._openCamera()
+              }
+              if (selectedValues === "Select from gallery") {
+                  this._openPicker()
+              }
+            },
+            ...props
+        });
+    }
 
     _onChangeText = (jobDescription, fullAddress) => {
         this.setState({jobDescription, fullAddress}, () => {
@@ -83,7 +108,7 @@ export default class Profile extends Component {
                     </View>
                     <View style={profile.box}>
                         <View style={profile.chooseProfile}>
-                            <TouchableOpacity onPress={this._openPicker}>
+                            <TouchableOpacity  onPress={() => {this._onPress({presentationType: 1})}}>
                                 {this._checkProfile(this.state)}
                             </TouchableOpacity>
                         </View>

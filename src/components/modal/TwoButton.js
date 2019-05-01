@@ -60,7 +60,7 @@ export default class MultiButton extends Component {
                 <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
                     <TouchableOpacity
                         style={{
-                            flex: .3,
+                            flex: .45,
                             height: 20,
                             backgroundColor: '#e7e7e7',
                             alignItems: 'center'
@@ -69,21 +69,12 @@ export default class MultiButton extends Component {
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={{
-                            flex: .3,
+                            flex: .45,
                             height: 20,
                             backgroundColor: '#e7e7e7',
                             alignItems: 'center'
                         }}>
                         <Text h6>{btn2}</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity
-                        style={{
-                            flex: .3,
-                            height: 20,
-                            backgroundColor: '#e7e7e7',
-                            alignItems: 'center'
-                        }}>
-                        <Text h6>{btn3}</Text>
                     </TouchableOpacity>
                 </View>
             </View>

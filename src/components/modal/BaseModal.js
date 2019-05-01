@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import Modal from 'react-native-modal'
-import { Icon, View} from "native-base";
+import {Icon, View, Content} from "native-base";
 import Text from "../../components/Common/Text";
 import {primaryTextColor} from "../../helper/colors";
 import {TouchableOpacity} from "react-native";
@@ -22,8 +22,8 @@ export default class BaseModal extends Component {
             <Modal onBackdropPress={this._toggleModal} style={{alignItems: 'center'}}
                    isVisible={this.state.isModalVisible}>
                 <View style={search.modalView}>
-                    <View style={{padding: 5}}>
-                        <Text color={primaryTextColor} h5 style={{padding: 10}}>{title}</Text>
+                    <View style={{padding: 5 , flex : .15}}>
+                        <Text color={primaryTextColor} h6 style={{paddingRight: 10 , paddingBottom : 5 , paddingTop :5}}>{title}</Text>
                         <View style={{
                             height: .8,
                             width: '95%',
@@ -31,7 +31,10 @@ export default class BaseModal extends Component {
                             alignSelf: 'center'
                         }}/>
                     </View>
-                    {this.props.children}
+                    <Content contentContainerStyle = {{marginBottom : 30 , flex: 1}}>
+                        {this.props.children}
+                    </Content>
+                    <View style ={{flex :.15}}>
                     <TouchableOpacity
                         style={{
                             borderTopRightRadius: 10,
@@ -68,6 +71,7 @@ export default class BaseModal extends Component {
                             color: '#808080'
                         }}/>
                     </TouchableOpacity>
+                    </View>
                 </View>
             </Modal>
         )

@@ -21,6 +21,7 @@ import Search from "./src/screens/search/Search";
 import Main from "./src/screens/main/Main";
 import Home from "./src/screens/main/Home";
 
+
 export default class App extends Component {
     constructor() {
         super();
@@ -42,11 +43,11 @@ export default class App extends Component {
                     <Scene key = "followers_status"  hideNavBar >
                         <Scene key = "last_followers_status" component = {Followers} />
                     </Scene>
-                    <Scene key = "search_filter"  hideNavBar >
-                        <Scene key = "search" component = {Search} />
+                    <Scene key = "search_filter"  hideNavBar initial>
+                        <Scene key = "search" component = {Search} initial/>
                     </Scene>
-                    <Scene key = "main"  hideNavBar initial>
-                        <Scene key = "main_page" component = {Main} initial/>
+                    <Scene key = "main"  hideNavBar >
+                        <Scene key = "main_page" component = {Main} />
                         <Scene key = "home" component = {Home} />
                     </Scene>
                 </Scene>

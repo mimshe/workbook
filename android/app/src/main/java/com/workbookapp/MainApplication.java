@@ -3,6 +3,7 @@ package com.workbookapp;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import ui.selectionmenu.RNSelectionMenuPackage;
 import com.swmansion.reanimated.ReanimatedPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
@@ -26,6 +27,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNSelectionMenuPackage(),
             new ReanimatedPackage(),
             new RNGestureHandlerPackage(),
             new PickerPackage()

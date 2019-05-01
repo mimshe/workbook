@@ -1,18 +1,17 @@
 import React, {Component} from 'react';
 import {Container, Content, Header, Icon, View, Button} from 'native-base'
 import {TouchableOpacity, TextInput} from 'react-native';
-import index from "../../assets/style/followers";
-import {ButtonGroup, Image} from 'react-native-elements';
+import {Image} from 'react-native-elements';
 import Text from "../../components/Common/Text";
 import search from '../../assets/style/search/search'
 import MultiButton from "../../components/modal/MultiButton";
 import SingleButton from "../../components/modal/SingleButton";
 import BaseModal from "../../components/modal/BaseModal";
-import {activeButtonColor, inActiveButtonColor, primaryColor, primaryTextColor} from "../../helper/colors";
+import TwoButton from "../../components/modal/TwoButton";
 
-const component1 = () => <Text color = 'black' h5>رویدادهای‌اخیر</Text>;
-const component2 = () => <Text color = 'black' h5>دنبال‌کنندگان‌اخیر</Text>;
-const component3 = () => <Text color = 'black' h5>لایک‌شده‌ها</Text>;
+const component1 = () => <Text color='black' h6>رویدادهای‌اخیر</Text>;
+const component2 = () => <Text color='black' h6>دنبال‌کنندگان‌اخیر</Text>;
+const component3 = () => <Text color='black' h6>لایک‌شده‌ها</Text>;
 
 export default class Search extends Component {
     state = {
@@ -21,9 +20,10 @@ export default class Search extends Component {
         value: '',
         selectedIndex: 0
     };
-    updateIndex=(selectedIndex)  =>{
+    updateIndex = (selectedIndex) => {
         this.setState({selectedIndex})
     };
+
     render() {
         const buttons = [{element: component1}, {element: component2}, {element: component3}];
         const {selectedIndex} = this.state;
@@ -79,27 +79,20 @@ export default class Search extends Component {
                             <Button style={search.followButton}><Text h6>دنبال کنید</Text></Button>
                         </View>
                     </View>
+                    <BaseModal title='فیلتر سازی جستجو' ref={(ref) => this.modal = ref}>
+                        <Content>
+                            <MultiButton text='بر اساس قیمت' btn1='ارزانترین' btn2='گرانترین' btn3='توافقی'/>
+                            <SingleButton text='بر اساس صنف'/>
+                            <SingleButton text='به میزان علاقه مندی کاربران'/>
+                            <TwoButton text='تصاویر' btn1='نمایش داده شوند' btn2='نمایش داده نشوند'/>
+                            <SingleButton text='نمایش بر اساس به روز ترین پست ها'/>
+                            <TextInput placeholder='شهر مورد نظر خود را برای جستجو وارد کنید'
+                                       placeholderTextFontFamily="IRANSansMobile(FaNum)"
+                                       style={search.input}/>
+                        </Content>
+                    </BaseModal>
                 </Content>
-                <BaseModal title='فیلتر سازی جستجو' ref={(ref) => this.modal = ref}>
-                    <Content>
-                        <MultiButton text='بر اساس قیمت' >
-                            <ButtonGroup
-                                selectedButtonStyle = {{backgroundColor : activeButtonColor}}
-                                buttonStyle={{backgroundColor : inActiveButtonColor}}
-                                onPress={this.updateIndex}
-                                selectedIndex={selectedIndex}
-                                buttons={buttons}
-                                containerStyle={index.buttonGroup}/>
-                        </MultiButton>
-                        <SingleButton text='بر اساس صنف'/>
-                        <SingleButton text='به میزان علاقه مندی کاربران'/>
-                        <MultiButton text='تصاویر' btn1='نمایش داده شوند' btn2='نمایش داده نشوند'/>
-                        <SingleButton text='نمایش بر اساس به روز ترین پست ها'/>
-                        <TextInput placeholder='شهر مورد نظر خود را برای جستجو وارد کنید'
-                                   placeholderTextFontFamily="IRANSansMobile(FaNum)"
-                                   style={search.input}/>
-                    </Content>
-                </BaseModal>
+
             </Container>
         )
     }

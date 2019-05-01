@@ -16,10 +16,10 @@ export default class FollowersItem extends Component<{}> {
                     <Text style={{paddingRight: 15}} color='black'>{item.name}</Text>
                     <View style={style.bottom}>
                         <TouchableOpacity activeOpacity={.8} style={style.followButton}>
-                            <Text h5 color='black'>دنبال کنید</Text>
+                            <Text h6 color='black'>دنبال کنید</Text>
                         </TouchableOpacity>
                         <View style={style.costumersView}>
-                            <Text h5 color='black'>از مشتریان شما شده است</Text>
+                            <Text h6 color='black'>از مشتریان شما شده است</Text>
                         </View>
                     </View>
                 </View>

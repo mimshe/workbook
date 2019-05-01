@@ -30,7 +30,7 @@ export default class SingleButton extends Component{
                         backgroundColor: '#9b9b9b'
                     }}/>
                     <Icon name='ios-arrow-back' style={{fontSize: 16, color: '#929592'}}/>
-                    <Text h5 style={{marginLeft: 10}}>{text}</Text>
+                    <Text h6 style={{marginLeft: 10}}>{text}</Text>
                 </View>
             </View>
         )
