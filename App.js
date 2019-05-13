@@ -14,12 +14,18 @@ EStyleSheet.build({ // always call EStyleSheet.build() even if you don't use glo
     $fontFamily: "IRANSansMobile(FaNum)"
 });
 import {I18nManager} from 'react-native';
-import Profile from "./src/screens/setting/profile/Profile";
-import Maps from "./src/screens/setting/profile/Maps";
+import CompleteProfile from "./src/screens/auth/CompleteProfile";
+import Maps from "./src/screens/auth/Maps";
 import Followers from "./src/screens/followers/Followers";
 import Search from "./src/screens/search/Search";
 import Main from "./src/screens/main/Main";
+import Profile from "./src/screens/main/Profile";
+import EditProfile from "./src/screens/changeProfile/EditProfile";
+import MyProfile from "./src/screens/changeProfile/MyProfile";
+import MyAddress from "./src/screens/changeProfile/MyAddress";
+import MyResume from "./src/screens/changeProfile/MyResume";
 import Home from "./src/screens/main/Home";
+import Comment from "./src/screens/main/Comment";
 
 
 export default class App extends Component {
@@ -37,7 +43,7 @@ export default class App extends Component {
                         <Scene key="login" component={Login} />
                     </Scene>
                     <Scene key="setting" hideNavBar >
-                        <Scene key="profile" component={Profile} />
+                        <Scene key="complete_profile" component={CompleteProfile} />
                         <Scene key="map" component={Maps} />
                     </Scene >
                     <Scene key = "followers_status"  hideNavBar >
@@ -48,7 +54,13 @@ export default class App extends Component {
                     </Scene>
                     <Scene key = "main"  hideNavBar initial>
                         <Scene key = "main_page" component = {Main} />
+                        <Scene key = "profile" component = {Profile} />
+                        <Scene key = "edit_profile" component = {EditProfile} />
+                        <Scene key = "my_profile" component = {MyProfile} />
+                        <Scene key = "my_address" component = {MyAddress} />
+                        <Scene key = "my_resume" component = {MyResume} initial/>
                         <Scene key = "home" component = {Home} initial/>
+                        <Scene key = "comment" component = {Comment} initial/>
                     </Scene>
                 </Scene>
             </Router>

@@ -2,15 +2,15 @@ import React, {Component} from 'react';
 import {Content, Icon} from 'native-base';
 import {Image, TextInput, TouchableOpacity} from 'react-native';
 import ImagePicker from 'react-native-image-crop-picker';
-import profile from "../../../assets/style/setting/profile";
-import View from "../../../components/Common/View";
-import Text from "../../../components/Common/Text";
-import {primaryColor} from "../../../helper/colors";
-import InputIcon from "../../../components/Common/InputIcon";
-import Tooltip from "../../../components/Tooltip";
+import profile from "../../assets/style/auth/profile";
+import View from "../../components/Common/View";
+import Text from "../../components/Common/Text";
+import {primaryColor} from "../../helper/colors";
+import InputIcon from "../../components/Common/InputIcon";
+import Tooltip from "../../components/Tooltip";
 import { RNSelectionMenu } from 'react-native-selection-menu'
 
-export default class Profile extends Component {
+export default class CompleteProfile extends Component {
 
     state = {
         jobDescription: '',
@@ -72,7 +72,7 @@ export default class Profile extends Component {
         if (this.state.image === null) {
             return (
                 <Image style={{width: 80, height: 80, margin: 10}}
-                       source={require('../../../assets/images/logo.png')}/>)
+                       source={require('../../assets/images/logo.png')}/>)
         } else {
             return (<Image style={{width: 80, height: 80, margin: 10}} source={this.state.image}/>)
         }
@@ -143,7 +143,7 @@ export default class Profile extends Component {
                         کنید</Text>
                 </View>
                 <View style={profile.footerView}>
-                    <Image source={require('../../../assets/images/logo.png')}
+                    <Image source={require('../../assets/images/logo.png')}
                            style={profile.logo}/>
                     <Text style={{width: 120}} h6>لورم ایپسوم متن ساختگی با تولید
                         سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک

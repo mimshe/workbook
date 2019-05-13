@@ -1,111 +1,181 @@
 import EStyleSheet from 'react-native-extended-stylesheet'
 import {screenWidth} from "../../../helper";
 
-const home = EStyleSheet.create({
-    header: {
-        backgroundColor: 'white',
-        shadowColor: '#e2e2e2',
-        shadowOffset: {
-            width: 0,
-            height: 3,
-        },
-        shadowOpacity: 0.37,
-        shadowRadius: 7.49,
-        elevation: 15,
-    },
-    headerInside: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        width: '100%',
-        padding: 7
 
-    },
-    keyIcon : {
-        fontSize: 25,
-        color: '#2d2d2d'
-    },
-    pencilIcon : {
-        fontSize: 25,
-        color: '#2d2d2d',
-        marginLeft: 20
-    },
-    headerBadge : {
-        marginTop: -8,
-        marginLeft: -10,
-        backgroundColor: 'transparent'
-    },
-    userInfo : {
-        alignItems: 'flex-start',
-        flex: .5 ,
-        justifyContent : 'center'
-    },
-    avatar : {
-        flex: .5,
-        width: 50,
-        height: 50,
-        borderRadius: 30,
-        borderWidth: 2,
-        borderColor: 'black'
-    },
-    usernameView : {
+
+const home = EStyleSheet.create({
+    userBar: {
         flexDirection: 'row',
-        marginBottom: 5,
         justifyContent: 'space-between',
+        alignItems: 'center',
+        paddingHorizontal: 10,
+        marginTop: 15
+    },
+    user: {
+        flexDirection: 'row',
         alignItems: 'center'
     },
-    changeProfileView : {
-        flexDirection: 'row',
-        justifyContent: 'center' ,
-        alignItems : 'center'
+    thumbnail: {
+        width: 35,
+        height: 35,
+        borderRadius: 17.5
     },
-    ySeparator : {
-        width: 13,
-        height: 13,
-        borderRadius: 6.5,
-        backgroundColor: 'green',
-        marginRight: 5
+    username: {
+        marginLeft: 10
     },
-    changeProfileButton : {
-        borderLeftWidth: .8,
-        borderLeftColor: '#f0f0f0',
-        paddingLeft: 5
-    } ,
-    xSeparator : {
-        marginLeft: 10,
+    postImage: {
+        width: screenWidth(),
+        height: 300,
         backgroundColor: 'gray',
-        height: .8,
-        width: screenWidth() / 1.5
+        marginTop: 10
     },
-    infoBoxBottomView : {
+    statusBar: {
+        flexDirection: 'row',
+        marginTop: 5,
+        justifyContent: 'space-between'
+    },
+    leftSideStatusBar: {
+        flexDirection: 'row',
+        paddingHorizontal: 10,
+        justifyContent: 'space-between'
+    },
+    likeButtonView: {
+        height: 25,
+        width: 90,
+        borderWidth: .8,
+        borderColor: '#ff4d00',
+        borderRadius: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 10,
+        alignItems: 'center'
+    },
+    likeIcon: {
+        fontSize: 18,
+        color: '#c90004'
+    },
+    commentButtonView: {
+        height: 25,
+        width: 90,
+        borderWidth: .8,
+        borderColor: '#7f807f',
+        borderRadius: 20,
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        paddingHorizontal: 10,
         alignItems: 'center',
-        flex: .33,
-        borderRightWidth: .8,
-        borderRightColor: '#f5f5f5'
+        marginRight: 10
+    },
+    commentIcon: {
+        fontSize: 18,
+        color: '#7f807f'
+    },
+    rateBarView: {
+        marginLeft: 8
     },
     buttonGroup: {
-        height: 40,
-        marginTop: 25,
-    },
-    buttonGroupView: {
         flex: 1,
         flexDirection: 'row',
+        marginTop: 10,
+        paddingHorizontal: 10,
+    },
+    priceButton: {
+        flex: 3,
+        height: 30,
+        borderRadius: 3,
+        marginLeft: 5,
+        backgroundColor: '#303030',
         alignItems: 'center',
         justifyContent: 'center'
     },
-    buttonGroupIcon: {
-        color: '#a1a1a1',
-        fontSize: 22
-    },
-    infoBox: {
-        flexDirection: 'row',
-        alignSelf: 'center',
-        justifyContent: 'space-between',
+    infoButton: {
+        //width : 90,
+        height: 30,
         flex: 2,
-
-        height: 100,
-        marginTop: 15,
-    }
+        borderRadius: 3,
+        marginLeft: 5,
+        backgroundColor: '#303030',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    addButton: {
+        flex: 1,
+        height: 30,
+        borderRadius: 3,
+        backgroundColor: '#d2d2d2',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    textArea: {
+        margin: 10,
+        borderBottomWidth: .8
+    },
+    textAreaStyle: {
+        fontSize: 12,
+        fontFamily: '$fontFamily',
+    },
+    commentBoxView: {
+        flexDirection: 'row',
+        paddingHorizontal: 10
+    },
+    commentBoxIcon: {
+        fontSize: 22,
+        color: '#db6149'
+    },
+    commentBoxTitle: {
+        marginLeft: 5
+    },
+    commentBoxCount: {
+        marginLeft: 10
+    },
+    commentBoxText: {
+        flexDirection: 'row',
+        marginLeft: 10,
+        marginTop: 5,
+        alignItems: 'center'
+    },
+    tag: {
+        marginLeft : 10,
+        marginBottom : 15,
+        width: 50,
+        height: 20,
+        marginTop : 15,
+        backgroundColor: '#6eddff',
+        alignItems: 'center',
+        justifyContent: 'center',
+        borderRadius : 20
+    },
+    tagView : {
+        flexDirection : 'row',
+        flexWrap : 'wrap',
+    },
+    infoBox : {
+        flex : 1 ,
+        flexDirection : 'row',
+        flexWrap : 'wrap',
+        marginTop : 10,
+        paddingHorizontal : 10,
+        justifyContent : 'space-between'
+    },
+    infoView : {
+        flex : .49,
+        backgroundColor : '#e0e0e0',
+        height : 30,
+        alignItems : 'flex-start',
+        justifyContent : 'center',
+        paddingLeft : 5
+    },
+    inputAddress: {
+        margin: 10,
+        height: 40,
+        fontFamily: '$fontFamily',
+        fontSize: 12,
+        textAlign: 'left',
+        borderWidth: .8,
+        borderColor : '#bababa',
+        alignItems: 'center',
+        paddingLeft: 10
+    },
 });
 
 export default home;

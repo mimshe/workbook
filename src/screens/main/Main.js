@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {View, StyleSheet, Dimensions} from 'react-native';
 import {TabView, TabBar, SceneMap} from 'react-native-tab-view';
 import {Icon as BaseIcon} from 'native-base'
-import Home from "./Home";
+import Profile from "./Profile";
 import {screenWidth} from "../../helper";
 
 const FirstRoute = () => (
@@ -15,7 +15,7 @@ const ThirdRoute = () => (
     <View style={[styles.scene, {backgroundColor: '#5affa2'}]}/>
 );
 const FourthRoute = () => (
-    <Home/>
+    <Profile/>
 );
 
 export default class Main extends Component {
@@ -25,7 +25,7 @@ export default class Main extends Component {
             {key: 'person', icon: 'person'},
             {key: 'heart', icon: 'heart'},
             {key: 'search', icon: 'search'},
-            {key: 'home', icon: 'home'},
+            {key: 'settingProfile', icon: 'settingProfile'},
         ],
     };
     _renderIcon = ({route}) => {

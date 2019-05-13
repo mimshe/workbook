@@ -2,10 +2,7 @@ import React, {Component} from 'react'
 import {Icon, View} from "native-base";
 import Text from "../../components/Common/Text";
 import {TouchableOpacity} from "react-native";
-import {activeButtonColor, inActiveButtonColor} from "../../helper/colors";
-import index from "../../assets/style/followers";
-import {ButtonGroup} from "react-native-elements";
-import {screenWidth} from "../../helper";
+
 
 export default class MultiButton extends Component {
     constructor() {
@@ -22,12 +19,12 @@ export default class MultiButton extends Component {
 
     render() {
         const {
-            text = '', btn1 = '', btn2 = '', btn3 = '', onChangeText = () => {
+            text = '', btn1 = '', btn2 = '', onChangeText = () => {
             },
             onPress = () => {
             }
         } = this.props;
-        const buttons = [{element: <Text color='black' h6>{btn1}</Text>}, {
+        const buttons = [{element: <Text color='black' h7>{btn1}</Text>}, {
             element: <Text color='black' h6>{btn2}</Text>
         }];
         const {selectedIndex} = this.state;
@@ -65,7 +62,7 @@ export default class MultiButton extends Component {
                             backgroundColor: '#e7e7e7',
                             alignItems: 'center'
                         }}>
-                        <Text h6>{btn1}</Text>
+                        <Text h7>{btn1}</Text>
                     </TouchableOpacity>
                     <TouchableOpacity
                         style={{
@@ -74,7 +71,7 @@ export default class MultiButton extends Component {
                             backgroundColor: '#e7e7e7',
                             alignItems: 'center'
                         }}>
-                        <Text h6>{btn2}</Text>
+                        <Text h7>{btn2}</Text>
                     </TouchableOpacity>
                 </View>
             </View>

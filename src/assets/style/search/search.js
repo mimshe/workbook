@@ -34,7 +34,7 @@ const search = EStyleSheet.create({
     modalView: {
         height: screenHeight() * .5,
         maxHeight: 460,
-        width: screenWidth() / 1.2,
+        width: screenWidth() / 1.1,
         maxWidth: 500,
         backgroundColor: 'white',
         borderRadius: 20,

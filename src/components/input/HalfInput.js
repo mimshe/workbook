@@ -4,10 +4,9 @@ import {primaryColor} from "../../helper/colors";
 import EStyleSheet from "react-native-extended-stylesheet";
 
 export default class InputIcon extends Component {
-    state = {
-        text: ''
-    };
-
+    state =  {
+        text : ''
+    }
     render() {
         const {icon = this.props.name} = this.props;
         return (
@@ -25,24 +24,23 @@ export default class InputIcon extends Component {
 }
 const style = EStyleSheet.create({
     view: {
+       flex : .5,
         flexDirection: 'row',
-        marginTop: 10,
-        marginRight: 10,
-        marginLeft: 10,
-        borderWidth: .8,
+        marginTop : 10,
+        marginRight : 10 ,
+        marginLeft : 10 ,
+        borderBottomWidth: .8,
         borderColor: primaryColor,
         alignItems: 'center',
-        height : 40
     },
     input: {
-
+        height: 40,
         textAlign: 'left',
         fontFamily: '$fontFamily',
         color: '$primaryColor',
-        paddingLeft: 10,
+        padding: 5,
         marginRight: 5,
-        fontSize: 14,
-
+        fontSize: 12,
     },
     separator: {
         width: .8,
@@ -52,7 +50,7 @@ const style = EStyleSheet.create({
     },
     icon: {
         color: '$secondaryColor',
-        fontSize: 22,
+        fontSize : 22,
         marginLeft: 10
     },
 });

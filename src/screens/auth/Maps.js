@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import {Content, Icon, View} from 'native-base'
-import profile from "../../../assets/style/setting/profile";
+import profile from "../../assets/style/auth/profile";
 import {TouchableOpacity} from "react-native";
-import Text from "../../../components/Common/Text";
-import {primaryColor} from "../../../helper/colors";
+import Text from "../../components/Common/Text";
+import {primaryColor} from "../../helper/colors";
 
 export default class Maps extends Component {
     state = {
