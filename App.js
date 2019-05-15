@@ -26,6 +26,7 @@ import MyAddress from "./src/screens/changeProfile/MyAddress";
 import MyResume from "./src/screens/changeProfile/MyResume";
 import Home from "./src/screens/main/Home";
 import Comment from "./src/screens/main/Comment";
+import AddProduct from "./src/screens/main/AddProduct";
 
 
 export default class App extends Component {
@@ -58,9 +59,10 @@ export default class App extends Component {
                         <Scene key = "edit_profile" component = {EditProfile} />
                         <Scene key = "my_profile" component = {MyProfile} />
                         <Scene key = "my_address" component = {MyAddress} />
-                        <Scene key = "my_resume" component = {MyResume} initial/>
-                        <Scene key = "home" component = {Home} initial/>
-                        <Scene key = "comment" component = {Comment} initial/>
+                        <Scene key = "my_resume" component = {MyResume} />
+                        <Scene key = "home" component = {Home} />
+                        <Scene key = "comment" component = {Comment} />
+                        <Scene key = "add_product" component = {AddProduct} initial/>
                     </Scene>
                 </Scene>
             </Router>

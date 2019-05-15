@@ -71,7 +71,7 @@ const search = EStyleSheet.create({
     },
     searchResultCard: {
         height : 70,
-        width : screenWidth() * .4 ,
+        width : null ,
         backgroundColor: '#f1f1f1',
         marginTop : 15,
         flexDirection : 'row',

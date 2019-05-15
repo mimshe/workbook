@@ -112,7 +112,7 @@ export default class CompleteProfile extends Component {
                                 {this._checkProfile(this.state)}
                             </TouchableOpacity>
                         </View>
-                        <Text h6 style={profile.text}>برای انتخاب یک پروفایل اختصاصی روی باکس بالا کلیک کنید</Text>
+                        <Text h7 style={profile.text}>برای انتخاب یک پروفایل اختصاصی روی باکس بالا کلیک کنید</Text>
                     </View>
                     <View style={{alignItems: 'flex-start', zIndex: 1, marginBottom: -40, marginLeft: 6}}>
                         <Tooltip/>
@@ -139,7 +139,7 @@ export default class CompleteProfile extends Component {
                     </View>
                 </View>
                 <View style={profile.subHeader}>
-                    <Text h6 color={primaryColor} style={{marginTop: 8}}>جهت نمایش سایت و آخرین اخبار برنامه کلیک
+                    <Text h7 color={primaryColor} style={{marginTop: 8}}>جهت نمایش سایت و آخرین اخبار برنامه کلیک
                         کنید</Text>
                 </View>
                 <View style={profile.footerView}>
