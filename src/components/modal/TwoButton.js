@@ -4,7 +4,7 @@ import Text from "../../components/Common/Text";
 import {TouchableOpacity} from "react-native";
 
 
-export default class MultiButton extends Component {
+export default class TwoButton extends Component {
     constructor() {
         super();
         this.state = {

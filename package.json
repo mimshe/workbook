@@ -7,10 +7,13 @@
     "test": "jest"
   },
   "dependencies": {
+    "chips": "^0.1.0",
     "native-base": "^2.12.1",
     "react": "16.8.3",
-    "react-native": "0.59.4",
+    "react-native": "^0.59.4",
     "react-native-app-intro-slider": "^2.0.1",
+    "react-native-chip": "^2.1.8",
+    "react-native-chips": "^2.2.0",
     "react-native-elements": "^1.1.0",
     "react-native-extended-stylesheet": "^0.11.1",
     "react-native-gesture-handler": "^1.1.0",
@@ -21,7 +24,8 @@
     "react-native-router-flux": "^4.0.6",
     "react-native-selection-menu": "0.0.1",
     "react-native-star-rating": "^1.1.0",
-    "react-native-tab-view": "^2.2.0"
+    "react-native-tab-view": "^2.2.0",
+    "react-native-chips": "latest"
   },
   "devDependencies": {
     "@babel/core": "7.4.3",

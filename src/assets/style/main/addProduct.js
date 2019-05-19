@@ -17,7 +17,27 @@ const addProduct = EStyleSheet.create({
     },
     addIcon : {
         fontSize : 28,
-    }
+    },
+    input : {
+        margin: 5,
+        height : 30,
+
+        fontFamily: '$fontFamily',
+        fontSize: 10,
+        textAlign: 'right',
+        borderBottomWidth: .8,
+        borderColor : '#d1d1d1',
+        alignItems: 'center',
+        padding: 7,
+
+    },
+    buttonGroup: {
+        height: 30,
+        borderRadius: 3,
+        marginTop: 15,
+        marginLeft: 10,
+        marginRight: 10,
+    },
 });
 
 export default addProduct;
